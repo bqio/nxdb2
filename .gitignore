@@ -1,0 +1,5 @@
+node_modules
+package-lock.json
+data/versions.json
+data/RU.ru.json
+data/_nxdb.json

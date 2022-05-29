@@ -1,0 +1,17 @@
+{
+  "name": "nxdb",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "generate": "node generate",
+    "build": "npm run generate"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "js-levenshtein": "^1.1.6"
+  }
+}

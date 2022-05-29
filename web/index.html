@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>nxdb</title>
+  </head>
+  <body>
+    <div id="app" v-cloak>
+      <transition name="fade">
+        <div
+          class="modal"
+          :class="{ 'modal-error': modal.isError }"
+          v-if="modal.isShow"
+        >
+          {{modal.text}}
+        </div>
+      </transition>
+      <div class="card-list">
+        <a
+          class="card"
+          v-for="title of titleList"
+          :href="`#${title.id}`"
+          @click="download(title)"
+          :class="{ opacity: title.hash == '' }"
+          :key="title.id"
+        >
+          <div class="card-image">
+            <img
+              :src="title.banner"
+              alt="banner"
+              @error="onImageError($event, title.altBanner)"
+              draggable="false"
+            />
+          </div>
+          <div class="card-title" :title="title.title">{{title.title}}</div>
+          <div class="card-desc">{{title.id}}</div>
+        </a>
+      </div>
+    </div>
+    <script src="vue3.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
